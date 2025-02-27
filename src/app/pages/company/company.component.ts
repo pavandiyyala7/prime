@@ -11,6 +11,7 @@ import { DialogModule } from 'primeng/dialog';
 import { TextareaModule } from 'primeng/textarea';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
+// sample
 @Component({
   selector: 'app-company',
   standalone: true,
