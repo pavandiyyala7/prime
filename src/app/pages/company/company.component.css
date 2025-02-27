@@ -1,0 +1,97 @@
+@import "primeicons/primeicons.css";
+
+.main-container {
+  padding: 40px;
+  background-color: #f6f6fa; 
+  min-height: 100vh;
+  color: black;
+  position: relative;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+
+.form-container {
+  background: #ffffff;
+  padding: 20px;
+  width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+.alert {
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.alert-success {
+  background: #c8e6c9;
+  color: black;
+}
+
+.alert-error {
+  background: #ffcdd2;
+  color: black;
+}
+
+
+.loader {
+  font-size: 2rem;
+}
+
+.top-section {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.search-box {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 250px;
+  background-color: transparent !important;
+  color: black;
+}
+
+.table-container {
+  margin-top: 1.5rem;
+  background: #FFFFFF; 
+  border-radius: 10px;
+  padding: 20px;
+  border: 0.1px solid rgb(230, 225, 225);
+  max-height: 500px;
+  
+}
+
+th {
+  background: #e3e7eb !important;
+  color: grey !important;
+}
+
+tr{
+  background-color: #ffffff;
+  color: grey;
+}
+
+tr:hover {
+  background-color:  #e3e7eb;
+}
+
+.btn-delete:hover {
+  background-color: #ef9a9a;
+}
+

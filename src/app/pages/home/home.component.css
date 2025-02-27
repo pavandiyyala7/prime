@@ -1,0 +1,37 @@
+.navbar-c{
+    background-color: rgb(44, 44, 136);
+    width: 20vw;
+}
+
+.home-container{
+    display: flex;
+}
+
+.lg-button:hover{
+    background-color: #007bff;
+    border-color: none;
+}
+
+.main-header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .main-container{
+    width: 90vw;
+    background-color: #e3e7eb;
+  }
+  .header-bg {
+    background-color:rgb(42, 44, 51) ;
+    width: 86vw ;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    
+    padding: 0.6rem 5rem;
+    align-items: center;
+  }
+  

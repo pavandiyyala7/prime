@@ -1,0 +1,82 @@
+<div class="home-container">
+  <div style="display: inline-block; width: 15%">
+    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark vh-100">
+      <a
+        href="/"
+        class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"
+      >
+        <span class="fs-4">Admin</span>
+      </a>
+      <hr />
+      <ul class="nav nav-pills flex-column mb-auto">
+        <li>
+          <a
+            routerLink="/dashboard"
+            routerLinkActive="active"
+            class="nav-link text-white"
+            (click)="setActiveTab('Dashboard')"
+          >
+            Dashboard
+          </a>
+        </li>
+        <li>
+          <a
+            routerLink="/employee"
+            routerLinkActive="active"
+            class="nav-link text-white"
+            (click)="setActiveTab('Employees')"
+          >
+            Employees
+          </a>
+        </li>
+        <li>
+          <a
+            routerLink="/departments"
+            routerLinkActive="active"
+            class="nav-link text-white"
+            (click)="setActiveTab('Departments')"
+          >
+            Departments
+          </a>
+        </li>
+        <li>
+          <a
+            routerLink="/companies"
+            routerLinkActive="active"
+            class="nav-link text-white"
+            (click)="setActiveTab('Companies')"
+          >
+            Companies
+          </a>
+        </li>
+      </ul>
+      <hr />
+      <div class="d-flex justify-content-center">
+        <button
+          type="submit"
+          class="btn btn-secondary lg-button"
+          (click)="logoff()"
+        >
+          Logout
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-container">
+    <div class="main-header">
+      <div class="header-bg">
+        <h5>{{ activeTab }}</h5>
+        <div>
+          <span>{{ userName }}</span
+          ><br />
+          <span>{{ userEmail }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="content"> -->
+    <router-outlet></router-outlet>
+    <!-- </div> -->
+  </div>
+</div>

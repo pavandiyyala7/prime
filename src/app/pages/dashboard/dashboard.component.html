@@ -1,0 +1,65 @@
+<div class="container mt-4">
+  @if(isLoader){
+    <div class="d-flex justify-content-center">
+      <i class="pi pi-spin pi-spinner loader" style="font-size: 2rem"></i>
+    </div>
+  } @else {
+
+    <div class="row">
+      <!-- Total Employees -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card employee-card bg-primary mb-3">
+          <div class="card-body text-center">
+            <i class="fas fa-users card-icon"></i>
+            <h5 class="card-title">Total Employees</h5>
+            <p class="display-4">{{ totalEmployees }}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Male Employees -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card employee-card bg-info mb-3">
+          <div class="card-body text-center">
+            <i class="fas fa-male card-icon"></i>
+            <h5 class="card-title">Male Employees</h5>
+            <p class="display-4">{{ maleCount }}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Female Employees -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card employee-card bg-danger mb-3">
+          <div class="card-body text-center">
+            <i class="fas fa-female card-icon"></i>
+            <h5 class="card-title">Female Employees</h5>
+            <p class="display-4">{{ femaleCount }}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Permanent Employees -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card employee-card bg-success mb-3">
+          <div class="card-body text-center">
+            <i class="fas fa-user-tie card-icon"></i>
+            <h5 class="card-title">Permanent Employees</h5>
+            <p class="display-4">{{ permanentCount }}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Temporary Employees -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card employee-card bg-warning mb-3">
+          <div class="card-bo dy text-center">
+            <i class="fas fa-user-clock card-icon"></i>
+            <h5 class="card-title">Temporary Employees</h5>
+            <p class="display-4">{{ temporaryCount }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  }
+</div>

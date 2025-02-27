@@ -1,0 +1,119 @@
+<div class="main-container">
+  <!-- Top Section -->
+  
+  <div class="top-section">
+    <input type="text" pInputText [(ngModel)]="searchQuery" variant="filled" (input)="filterCompanies()" placeholder="Search Company..." class="search-box" />
+    <p-button label="+ Add New Company" variant="text" [raised]="true" severity="info" (click)="toggleForm()" />
+  </div>
+
+  @if(isLoader){
+    <div class="d-flex justify-content-center">
+      <i class="pi pi-spin pi-spinner loader" style="font-size: 2rem"></i>
+    </div>
+  }
+
+  <!-- Floating Form -->
+  @if(showForm){
+    <div class="overlay" (click)="closeForm($event)">
+      <div class="form-container" (click)="$event.stopPropagation()">
+        <div class="card">
+          <div class="card-header">New Company</div>
+          <form #form="ngForm">
+            <div class="card-body">
+
+              <div class="form-group">
+                <label>Company Name</label>
+                <input type="text" name="name" required [(ngModel)]="companyObj.name" class="form-control">
+              </div>
+              <div class="form-group">
+                <label>Address</label>
+                <textarea name="address" required [(ngModel)]="companyObj.address" class="form-control"></textarea>
+              </div>
+              <div class="form-group">
+                <label>Email</label>
+                <input type="email" name="email" required [(ngModel)]="companyObj.email" class="form-control">
+              </div>
+              <div class="form-group">
+                <label>Phone</label>
+                <input type="text" name="phone" required [(ngModel)]="companyObj.phone" class="form-control">
+              </div>
+              <div class="form-group">
+                <label>Website</label>
+                <input type="text" name="website" required [(ngModel)]="companyObj.website" class="form-control">
+              </div>
+              <div class="btn-container">
+                <button class="btn btn-secondary m-1" (click)="onReset()">Reset</button>
+                <button class="btn btn-primary" [disabled]="!form.valid || isLoading" (click)="onSaveCompany()">
+                  {{ companyObj.id ? 'Update Company' : 'Save Company' }}
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  }
+
+  <!-- Company Table -->
+  <div class="table-container">
+
+    <p-table #dt [value]="filteredCompaniesList" [scrollable]="true" scrollHeight="60rem" class="custom-table">
+      <ng-template pTemplate="header">
+        <tr>
+          <th style="min-width:80px">Sr No</th>
+          <th style="min-width:200px">Name</th>
+          <th style="min-width:300px">Address</th>
+          <th style="min-width:250px">Email</th>
+          <th style="min-width:150px">Phone</th>
+          <th style="min-width:250px">Website</th>
+          <th style="min-width:200px">Actions</th>
+        </tr>
+      </ng-template>
+    
+      <ng-template pTemplate="body" let-company let-index="rowIndex">
+        <tr>
+          <td>{{ index + 1 }}</td>
+          <td>{{ company.name }}</td>
+          <td>{{ company.address }}</td>
+          <td>{{ company.email }}</td>
+          <td>{{ company.phone }}</td>
+          <td>{{ company.website }}</td>
+          <td class="d-flex">
+            <p-button label="Edit" variant="text" [raised]="true" severity="secondary" (click)="onEdit(company)"/>
+            <p-button class="btn-delete" label="Delete" variant="text" [raised]="true" severity="danger" (click)="onDelete(company.id)"/>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+    
+    <!-- <table>
+      <thead>
+        <tr>
+          <th>Sr no</th>
+          <th>Name</th>
+          <th>Address</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Website</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for(item of filteredCompaniesList; track $index){
+          <tr>
+            <td>{{$index+1}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.address}}</td>
+            <td>{{item.email}}</td>
+            <td>{{item.phone}}</td>
+            <td>{{item.website}}</td>
+            <td class="d-flex">
+              <button class="btn btn-edit" (click)="onEdit(item)">Edit</button>
+              <button class="btn btn-delete" (click)="onDelete(item.id)">Delete</button>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table> -->
+  </div>
+</div>
